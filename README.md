@@ -1,144 +1,82 @@
 # JSONPlaceholder API Testing using Postman
 
-## About the Project
+## About the project
 
-This project demonstrates API testing using **Postman** with the JSONPlaceholder REST API.
+I created this project to practice API testing using Postman and to understand how APIs behave for different types of requests.
 
-The project focuses on testing CRUD operations, validating API responses, creating positive and negative test scenarios, and writing automated test scripts in Postman.
+I tested the JSONPlaceholder REST API and created a small test suite for CRUD operations.
 
-## API Tested
+## Tools used
 
-**JSONPlaceholder**  
-A free fake REST API used for testing and development.
+- Postman
+- JavaScript (for Postman test scripts)
+- JSONPlaceholder API
 
-Base URL:
+## API operations tested
 
-```text
-https://jsonplaceholder.typicode.com
-Tools & Technologies
-Postman
-JavaScript
-JSON
-REST API
-GitHub
-Microsoft Excel
-API Operations Tested
-Method	Operation	Endpoint
-GET	Retrieve posts	/posts
-GET	Retrieve a specific post	/posts/{id}
-POST	Create a new post	/posts
-PUT	Update an existing post	/posts/{id}
-DELETE	Delete a post	/posts/{id}
-Testing Performed
-Functional Testing
-Verified HTTP status codes
-Validated response bodies
-Checked response structure
-Verified request and response data
-Tested CRUD operations
-Positive Testing
+- GET - Get a post
+- POST - Create a post
+- PUT - Update a post
+- PATCH - Partially update a post
+- DELETE - Delete a post
 
-Tested valid requests and verified that the API returned the expected responses.
+## Testing done
 
-Examples:
+I tested:
 
-Valid GET request
-Valid POST request
-Valid PUT request
-Valid DELETE request
-Valid resource IDs
-Negative Testing
+- Valid requests
+- Invalid post ID
+- Response status codes
+- Response body
+- Response headers
+- Response time
+- Required response fields
+- Dynamic values using Postman variables
+- Automated assertions using JavaScript
+- Collection Runner
 
-Tested invalid or unexpected inputs to verify API behavior.
+## Example test cases
 
-Examples:
+| Test | Expected result |
+|---|---|
+| GET post with valid ID | 200 OK |
+| GET post with invalid ID | 404 Not Found |
+| POST with valid data | 201 Created |
+| PUT update | 200 OK |
+| PATCH update | 200 OK |
+| DELETE post | 200 OK |
 
-Invalid resource IDs
-Non-existing resources
-Invalid request data
-Unexpected input values
-Automated Tests
+## Automation
 
-Postman test scripts were created using JavaScript to automate response validation.
+I added Postman test scripts to automatically check things like:
 
-The automated tests include checks for:
+- Status code
+- Post ID
+- User ID
+- Required fields
+- Content-Type
+- Response time
+- Updated values
 
-Status codes
-Response time
-Response body
-Required fields
-Data validation
-Successful API responses
+I also used variables such as `{{baseUrl}}` and `{{postId}}` so that the same request and test could be used with different values.
 
-Example:
+## Project files
 
-pm.test("Status code is 200", function () {
-    pm.response.to.have.status(200);
-});
+- `JSONPlaceholder_API_Test_Cases.xlsx` - manual test cases and Postman checks
+- Postman collection - API requests and automated tests
 
-pm.test("Response is JSON", function () {
-    pm.response.to.be.json;
-});
-Test Cases
+## Important note
 
-Detailed test cases are maintained in an Excel file.
+JSONPlaceholder is a fake REST API used for testing and practice. Some operations such as POST, PUT, PATCH and DELETE are simulated and are not permanently stored like they would be in a real application.
 
-The test cases include:
+## What I learned
 
-Test Case ID
-Test Scenario
-Request Method
-Endpoint
-Test Data
-Expected Result
-Actual Result
-Status
+Through this project I practiced how to:
 
-📄 View Test Cases
-
-Postman Collection
-
-The complete Postman collection containing the API requests and automated test scripts is available in the repository.
-
-📁 View Postman Collection
-
-Screenshots
-Postman Collection
-
-Automated API Tests
-
-Collection Run Results
-
-Project Structure
-JSONPlaceholder-API-Testing/
-│
-├── README.md
-│
-├── Postman/
-│   └── Postman Collection
-│
-├── Screenshots/
-│   ├── automated-api-tests.png
-│   ├── collection-run-results.png
-│   └── postman-collection.png
-│
-└── Test-Cases/
-    └── API Test Cases Excel File
-What I Learned
-
-Through this project, I gained practical experience in:
-
-Understanding REST APIs
-Working with HTTP methods
-Testing CRUD operations
-Creating API test cases
-Performing positive and negative testing
-Validating API responses
-Writing automated tests using JavaScript in Postman
-Using variables in Postman
-Running collections using Postman Collection Runner
-Documenting test cases and results
-Using GitHub to manage and showcase a testing project
-Conclusion
-
-This project helped me build practical knowledge of API testing and software testing fundamentals using Postman. It demonstrates my ability to create test cases, execute API requests, validate responses, automate basic API checks, and document testing activities.
+- Send API requests in Postman
+- Validate API responses
+- Write positive and negative test cases
+- Use Postman variables
+- Write basic JavaScript assertions
+- Run multiple API requests as a collection
+- Investigate failed API tests instead of assuming the API is wrong
