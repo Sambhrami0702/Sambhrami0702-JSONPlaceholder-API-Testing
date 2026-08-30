@@ -60,10 +60,12 @@ I added Postman test scripts to automatically check things like:
 
 I also used variables such as `{{baseUrl}}` and `{{postId}}` so that the same request and test could be used with different values.
 
+
 ## Project files
 
-- `JSONPlaceholder_API_Test_Cases.xlsx` - manual test cases and Postman checks
-- Postman collection - API requests and automated tests
+- `Test-Cases/` - manual test cases and Postman checks
+- `Postman/` - API requests and automated tests
+- `Screenshots/` - Postman collection, automated tests, and collection run results
 
 ## Important note
 
@@ -78,5 +80,17 @@ Through this project I practiced how to:
 - Write positive and negative test cases
 - Use Postman variables
 - Write basic JavaScript assertions
+
+
+## Screenshots
+
+### Postman Collection
+![Postman Collection](Screenshots/postman-collection.png)
+
+### Automated API Tests
+![Automated API Tests](Screenshots/automated-api-tests.png)
+
+### Collection Run Results
+![Collection Run Results](Screenshots/collection-run-results.png)
 - Run multiple API requests as a collection
 - Investigate failed API tests instead of assuming the API is wrong
